@@ -40,8 +40,8 @@ def send_email(user_email, user_name, qr_image_path):
     finally:
         server.quit()
         
-URL = os.getenv("SUPABASE_URL")
-KEY = os.getenv("SUPABASE_ANON_KEY")
+URL = os.getenv("REACT_APP_SUPABASE_URL")
+KEY = os.getenv("REACT_APP_SUPABASE_ANON_KEY")
 
 supabase: Client = create_client(URL, KEY)
 
