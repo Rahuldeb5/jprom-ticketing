@@ -52,8 +52,7 @@ if not os.path.exists(qr_codes_folder):
     os.makedirs(qr_codes_folder)
 
 for user in fetchUsers.data:
-    base_url = "https://jprom.stuysu.org/ticket"
-    qr_url = f"{base_url}?key={user['random_key']}" 
+    qr_url = user['random_key']
     qr_img = qrcode.make(qr_url)
     qr_img.save(os.path.join(qr_codes_folder, f"{user['name']}_ticket.png"))
     
