@@ -1,0 +1,23 @@
+.videoBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera {
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    padding-bottom: 5rem;
+}
+
+.scanButton {
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    padding-top: 5rem;
+}

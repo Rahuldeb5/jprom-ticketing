@@ -125,9 +125,9 @@ const UserPage = () => {
       }
         </Box>
       </Box>
-      <Box>
-        <video ref={videoRef} style={{ width: "25%" }} />
-        <Button variant="contained" onClick={handleClick}>Scan QR Code </Button>
+      <Box className="videoBox">
+        <video className="camera" ref={videoRef} style={{ width: "25%" }} />
+        <Button className = "scanButton" variant="contained" onClick={handleClick}>Scan QR Code </Button>
       </Box>
       
       {/* 
