@@ -109,31 +109,25 @@ const UserPage = () => {
       <Box className="navbar">
         <Navbar />
       </Box>
-      <Box paddingTop={"10em"}>
-        <Typography>JProm Ticket Page</Typography>
+      <Box>
+        <Typography className="TITLE">JProm Ticket Page</Typography>
+      </Box>
         <Box>
         {
         user ?
-          (<Box>
-            <Typography>{user.name}</Typography>
-            <Typography>{user.email}</Typography>
+          (<Box className="nameEmail">
+            <Typography>Name: {user.name}</Typography>
+            <Typography>E-Mail: {user.email}</Typography>
           </Box>)
           :
-          (<Box>
-            <Typography>No data found</Typography>
+          (<Box className="nameEmail">
+            <Typography>Name: _____ </Typography>
+            <Typography>E-Mail: _____ </Typography>
           </Box>)
       }
         </Box>
-      </Box>
       <Box className="videoBox">
-        <video className="camera" ref={videoRef} style={{ width: "25%" }} />
-        <Button className = "scanButton" variant="contained" onClick={handleClick}>Scan QR Code </Button>
-      </Box>
-      
-      {/* 
-        TO-DO: IMPLEMENT QR CODE SCANNER AND CHECK IN
-      */}
-      <Box>
+      <Box className="checkInBox">
         <Typography> Check in: </Typography>
       {
         user ?
@@ -144,8 +138,15 @@ const UserPage = () => {
           :
           (<></>)
       }
-      
       </Box>
+        <Button className = "scanButton" variant="contained" style={{backgroundColor: '#0e4187  ',color: '#ffffff',}} onClick={handleClick}>Scan QR Code </Button>
+        <video className="camera" ref={videoRef} style={{ width: "25%" }} />
+      </Box>
+      
+      {/* 
+        TO-DO: IMPLEMENT QR CODE SCANNER AND CHECK IN
+      */}
+
     </Box>
   );
 };
