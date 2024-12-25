@@ -3,7 +3,6 @@
 
 
 .videoBox{
-    font-family: 'Lora' !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,6 +17,7 @@
     margin: auto;
     align-items: center;
     padding-bottom: 5rem;
+    width: 25%;
 }
 
 .scanButton {
@@ -47,6 +47,11 @@
     text-align: center;
 }
 
+.name,.email,.checkin{
+    font-family: 'Lora' !important;
+    font-size: 20px !important;
+}
+
 .checkInBox {
     font-family: "Lora" !important;
     color: #433f83;
@@ -67,6 +72,7 @@
         color: #433f83;
         font-display: swap;
         text-align: center;
+        padding-bottom: 2rem;
     }
     .videoBox{
         font-family: 'Lora' !important;
@@ -77,5 +83,9 @@
         padding-bottom: 5rem;
         padding-top: 1rem;
         size: 10em;
+    }
+
+    .camera{
+        width: 75%;
     }
   }

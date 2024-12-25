@@ -121,14 +121,14 @@ const UserPage = () => {
           </Box>)
           :
           (<Box className="nameEmail">
-            <Typography>Name: _____ </Typography>
-            <Typography>E-Mail: _____ </Typography>
+            <Typography className='name'>Name: _____ </Typography>
+            <Typography className='email'>E-Mail: _____ </Typography>
           </Box>)
       }
         </Box>
       <Box className="videoBox">
       <Box className="checkInBox">
-        <Typography> Check in: </Typography>
+        <Typography className='checkin'> Check in: </Typography>
       {
         user ?
           (<Checkbox 
@@ -140,7 +140,7 @@ const UserPage = () => {
       }
       </Box>
         <Button className = "scanButton" variant="contained" style={{backgroundColor: '#0e4187  ',color: '#ffffff',}} onClick={handleClick}>Scan QR Code </Button>
-        <video className="camera" ref={videoRef} style={{ width: "25%" }} />
+        <video className="camera" ref={videoRef}/>
       </Box>
       
       {/* 
