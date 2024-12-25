@@ -1,4 +1,5 @@
 import './App.css';
+import Home from "./pages/Home";
 import { Box, Button, Checkbox, Typography } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { supabase } from './supabaseClient';
@@ -6,14 +7,6 @@ import { useEffect, useRef, useState } from 'react';
 import { BrowserQRCodeReader } from '@zxing/browser';
 import Navbar from './comps/Navbar';
 
-const HomePage = () => {
-  
-  return(
-    <Box className="navbar">
-      <Navbar />
-    </Box>
-  );
-}
 
 const UserPage = () => {
   const [key, setKey] = useState(null);
@@ -156,8 +149,8 @@ const App = () => {
     <Box>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<HomePage />} />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
           <Route path="/ticket" element={<UserPage />} />
         </Routes>
       </BrowserRouter>
