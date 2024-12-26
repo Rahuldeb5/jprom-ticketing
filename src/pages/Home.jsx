@@ -4,17 +4,16 @@ import "./Home.css";
 import { Box, Typography } from "@mui/material";
 
 export default function Home() {
-  const magazineUrl =
-    "https://www.instagram.com/p/DDK0lRat_K_/";
-
-  const mobile = window.innerWidth <= 430;
 
   return (
     <Box className="home-page">
       <Box className="navbar">
         <Navbar />
       </Box>
+      <Box>
+          <Typography className="TITLE">JProm Ticket Page</Typography>
       </Box>
+    </Box>
     
   );
 }
