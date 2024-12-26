@@ -11,7 +11,7 @@ export default function Home() {
         <Navbar />
       </Box>
       <Box>
-          <Typography className="TITLE">JProm Ticket Page</Typography>
+          <Typography className="title">JPROM</Typography>
       </Box>
     </Box>
     
