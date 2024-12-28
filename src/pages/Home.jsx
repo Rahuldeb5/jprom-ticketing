@@ -1,9 +1,14 @@
 import Navbar from "../comps/Navbar";
 import "./Home.css";
 // import Contact from "../comps/Contact";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Collapse } from "@mui/material";
+import React, { useState } from "react";
 
 export default function Home() {
+  const [expanded, setExpanded] = useState(false);
+  const expandOnClick = () => {
+    setExpanded(!expanded);
+  };
 
   return (
     <Box>
@@ -25,6 +30,13 @@ export default function Home() {
         scoring teams, and registration for the competition is free for all high schools. We will be allowing middle school students to participate in the
         competition as well!
         EMAIL: organizers@pclassic.org</Typography>
+      </Box>
+      <Box className="QNA">
+        <Typography className="QNA-title">FAQs</Typography>
+        <Typography onClick={expandOnClick} className="QNA-question">Lorem ipsum?</Typography>
+        <Collapse in={expanded}>
+          <Typography className="QNA-answer">Lorem ipsum.</Typography>
+        </Collapse>
       </Box>
     </Box>
     </Box>
