@@ -107,8 +107,8 @@ export default function Ticket() {
           {
           user ?
             (<Box className="nameEmail">
-              <Typography>Name: {user.name}</Typography>
-              <Typography>E-Mail: {user.email}</Typography>
+              <Typography className='name'>Name: {user.name}</Typography>
+              <Typography className='email'>E-Mail: {user.email}</Typography>
             </Box>)
             :
             (<Box className="nameEmail">
@@ -130,7 +130,7 @@ export default function Ticket() {
             (<></>)
         }
         </Box>
-          <Button className = "scanButton" variant="contained" style={{backgroundColor: '#0e4187  ',color: '#ffffff',}} onClick={handleClick}>Scan QR Code </Button>
+          <Button className = "scanButton" variant="contained" style={{backgroundColor: '#0e4187  ',color: '#ffffff'}} onClick={handleClick}>Scan QR Code </Button>
           <video className="camera" ref={videoRef}/>
         </Box>
         
