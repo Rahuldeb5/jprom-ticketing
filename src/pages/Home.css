@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   background-image: url("./patternhomepage.svg") !important;
-  background-size: fill;
+  background-size: cover;
   background-color: #c9c7ef;
   background-repeat: no-repeat; 
   display: flex;
@@ -38,7 +38,7 @@
   .banner {
     width: 100%;  
     text-align: center;
-    background-color: #f5f5f5;
+    background-color: rgba(255, 255, 255, 0.5);
     padding-top: 20px;
     padding-bottom: 40px;
     margin-top: 180px;
@@ -51,9 +51,10 @@
   }
 
   .info-page{
+    opacity: 85%;
     width: 100%;  
     text-align: center;
-    background-color: #f5f5f5;
+    background-color: rgba(255, 255, 255, 0.5);
     padding-top: 20px;
     padding-bottom: 60px;
     margin-top: 60px;
@@ -61,55 +62,86 @@
     flex-direction: column;
     align-items: center;
     border-radius: 30px;
-    max-width: 90%;
+    max-width: 85%;
   }
 
   .info-title{
     font-family: "Sahitya", serif !important;
-    text-decoration: underline;
     font-size: 5em !important;
     font-weight: 700;
-    margin-bottom: 20px;
-    color: #0e4187;
+    margin-bottom: 10px;
   }
 
   .info-text{
-    padding-top: 40px;
-    max-width: 80%;
+    font-family: "Newsreader" !important;
+    padding-top: 20px;
+    max-width: 50%;
+    font-size: 1.3em !important;
+  }
+
+  .slideshow {
+    padding-top: 20px;
   }
 
   .QNA {
+    opacity: 85%;
     margin: 3em;
-    background-color: #f5f5f5;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
-    padding: 3em;
     display: flex;
     flex-direction: column;
     text-align: center;
     max-width: 90%;
+    min-width: 85%;
+    border-radius: 25px;
+    padding: 1em;
   }
   .QNA-title {
     font-family: "Sahitya", serif !important;
     font-size: 5em !important;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #0e4187;
   }
   .QNA-question {
+    position: relative;
     font-size: 1.2em;
     font-style: italic;
     font-weight: 700;
     margin-bottom: 10px;
     color: #0e4187;
     cursor: pointer;
+    border-radius:25px;
+    text-align: left;
+    padding: 10px;
   }
+  .QNA-question:hover {
+    background-color: #d3d3d3;
+  }
+  .QNA-question::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #0e4187;
+    vertical-align: middle;
+    float: right;
+    transition: transform 0.3s ease-in-out;
+    line-height: 1.5;
+    transform: translateY(100%);
+}
+  .rotate-arrow::after {
+    transform: translateY(100%) rotate(180deg);
+  }
+
+  
   .QNA-answer {
+    text-align: left;
     font-size: 16px;
     margin-bottom: 10px;
-    padding: 10px;
-    border-style: line;
-    border-color: #000000 !important;
-    border-width: 1em;
+    padding: 10px; 
+    border-radius: 25px;
+    padding-left: 2em;
   }
   
   .MuiCollapse-wrapper {
@@ -129,13 +161,24 @@
   }
 
   @media screen and (max-width: 430px) {
-    .home-page {
-
+    .banner {
+      max-width: 90%;
     }
-    .left-column {
 
+    .banner-text{
+      max-width: 80%;
+      font-family: "Newsreader" !important;
+      font-size: 0.9em !important;
+      padding: 15px;
+      border: 3px solid #0e4187;
+      border-radius: 10px;
     }
-    .title {
 
+    .info-text{
+      font-family: "Newsreader" !important;
+      padding-top: 20px;
+      max-width: 80%;
+      font-size: 1.3em !important;
     }
-  }
+  
+  } 

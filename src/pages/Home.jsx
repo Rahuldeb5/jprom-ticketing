@@ -1,14 +1,23 @@
 import Navbar from "../comps/Navbar";
 import "./Home.css";
-// import Contact from "../comps/Contact";
+import Carousel from "../comps/Carousel";
 import { Box, Typography, Button, Collapse } from "@mui/material";
 import React, { useState } from "react";
 
 export default function Home() {
-  const [expanded, setExpanded] = useState(false);
-  const expandOnClick = () => {
-    setExpanded(!expanded);
+  const [expandedQuestion, setExpandedQuestion] = useState(null);
+  const [rotateArrow, setRotateArrow] = useState(false);
+  const questionsAndAnswers = [
+    {question: "Lorem ipsum dolor sit amet?", answer: "Lorem ipsum dolor sit amet."},
+    {question: "Lorem ipsum dolor sit amet?", answer: "Lorem ipsum dolor sit amet"},
+    {question: "Lorem ipsum dolor sit amet?", answer: "Lorem ipsum dolor sit amet."},
+  ];
+  const expandOnClick = (questionIndex) => {
+    setExpandedQuestion(expandedQuestion === questionIndex ? null : questionIndex);
+    setRotateArrow(!rotateArrow);
   };
+  
+
 
   return (
     <Box>
@@ -25,21 +34,30 @@ export default function Home() {
       </Box>
       <Box className="info-page">
       <Typography className="info-title">JPROM</Typography>
-      <Typography className="info-text">The Philadelphia Classic (PClassic) is Philadelphia's Premier Competitive Programming Competition held 
-        at the University of Pennsylvania. We host events semesterly for high school students. Prizes and awards are given out to the top 
-        scoring teams, and registration for the competition is free for all high schools. We will be allowing middle school students to participate in the
-        competition as well!
-        EMAIL: organizers@pclassic.org</Typography>
+      <Typography className="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Typography>
+        <Typography>&nbsp;</Typography>
+        <Typography className='info-text' >EMAIL: jhuang60@stuy.edu</Typography>
+        <Box className="slideshow">
+          <Carousel className="slideshow-carousel" />
+        </Box>
       </Box>
       <Box className="QNA">
-        <Typography className="QNA-title">FAQs</Typography>
-        <Typography onClick={expandOnClick} className="QNA-question">Lorem ipsum?</Typography>
-        <Collapse in={expanded}>
-          <Typography className="QNA-answer">Lorem ipsum.</Typography>
-        </Collapse>
+          <Typography className="QNA-title">FAQs</Typography>
+          {questionsAndAnswers.map((item, index) => (
+            <Box key={index}>
+              <Typography
+                onClick={() => expandOnClick(index)}
+                className={`QNA-question ${expandedQuestion === index ? "rotate-arrow" : ""}`}
+              >
+                {item.question}
+              </Typography>
+              <Collapse in={expandedQuestion === index}>
+                <Typography className="QNA-answer">{item.answer}</Typography>
+              </Collapse>
+            </Box>
+          ))}
+        </Box>
       </Box>
     </Box>
-    </Box>
-    
   );
 }
