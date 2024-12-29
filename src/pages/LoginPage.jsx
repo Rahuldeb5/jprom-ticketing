@@ -59,20 +59,26 @@ const LoginPage = () => {
                 </Box>
             ) : (
                 <Box>
+                <Box className="navbar">
+                <Navbar />
+                </Box>
+                <Box className="login-page">
                     <Box>
-                        <Box className="navbar">
-                            <Navbar />
+                        <Box className="login-container">
+                        <Box className="login-left">
+                        <img class="image" src="../images/wtc.png" alt="world trade center" />
+
                         </Box>
-                        <Box className="login"
+                        <Box className="login-right"
                             sx={{
                                 display: "flex",
                                 flexDirection: "column",
                                 alignItems: "center",
                                 justifyContent: "center",
-                                height: "50vh", // Adjust height as needed
+                                height: "50vh", 
                             }}>
-                            <Typography className="TITLE">
-                                Admin, please sign in with your stuy.edu email to access ticketing page
+                            <Typography className="login-title">
+                                Login with an authorized account to access ticketing page!
                             </Typography>
                             <Box className="loginButton"
                             sx ={{
@@ -83,6 +89,7 @@ const LoginPage = () => {
                                     disabled={loading}
                                     variant="contained"
                                     color="primary"
+                                    style={{backgroundColor: '#444484  ',color: '#ffffff'}}
                                     startIcon={<GoogleIcon />}
                                 >
                                     {loading ? 'Loading...' : 'Sign in with Google'}
@@ -91,6 +98,9 @@ const LoginPage = () => {
                         </Box>
                     </Box>
                 </Box>
+                </Box>
+                </Box>
+
             )}
         </Box>
     );
