@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC:wght@400;700&display=swap");
+
+.login-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./patternhomepage.svg") !important;
+    background-size: cover;
+    background-color: #c9c7ef;
+    background-repeat: no-repeat;
+    height: 100vh;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.login-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-right {
+    background-color: rgba(255, 255, 255, 0.5);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 100px;
+    margin-top: 150px;
+    padding-bottom: 40px;
+    border-radius: 30px;
+    box-shadow: 1px 4px 40px #444484; 
+}
+
+.loginButton {
+    align-self: center;
+    justify-content: center;
+    padding-top: 5vh;
+}
+
+.login-title {
+    font-family: "Baskervville SC" !important;
+    font-weight: 700;
+    text-align: center;
+    font-size: 2.5rem !important; 
+    margin-bottom: 1rem;
+    color: #433f83;
+    max-width: 70%;
+}
+
+.image{
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    max-width: 55%;
+    height: auto;
+}
+
+/* Animation */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        filter: blur(15px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .login-page{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-right {
+        max-width: 90%;
+        margin: 0;
+        margin-top: 50px;
+        padding-top: 50px;
+    }
+
+    .image{
+        margin-top: 100px;
+    }
+
+    .login-title{
+        font-size: 1.9rem !important;
+        line-height: 2.5rem !important;
+    }
+}

@@ -34,7 +34,7 @@ const Navbar = (props) => {
   return (
     <Box className="head-nav">
       <Box className="nav-container">
-        <Box className="logo-container" sx={{ width: "15%" }}>
+        <Box className="logo-container" sx={{ width: "20%" }}>
           <Link href="/">
             <img
               src="/images/JuniorCaucus.png"
@@ -47,7 +47,7 @@ const Navbar = (props) => {
             <Link
               href="/ticket"
               className="nav-menu-item"
-              style={{ fontSize: "1.75rem" }}
+              style={{ fontSize: "2rem" }}
             >
               Ticket Scan
             </Link>

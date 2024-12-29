@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC:wght@400;700&display=swap");
+
+.slideshow {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.carousel {
+  border-style: solid;
+  border-width: 8px;
+  border-radius: 50px;
+  border-color: black;
+  width: 50%;
+  max-width: 60em;
+  z-index: 0;
+  height: 400px;
+}
+
+.image-container img {
+  max-width: 60em;
+  width: 80%;
+  height: 400px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 430px) {
+  .image-container img {
+    height: 10em;
+  }
+
+  .slideshow {
+    height: 10em;
+    margin-bottom: 4em;
+    width: 75%;
+  }
+
+  .carousel {
+    border-style: solid;
+    border-width: 8px;
+    border-radius: 50px;
+    border-color: black;
+    width: 100%;
+    z-index: 0;
+    height: 15em;
+    margin-top: 150px;
+  }
+}

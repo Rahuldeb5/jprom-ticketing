@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+
+.ticketing-page {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("./pattern.svg") !important;
+    background-size: cover;
+    background-position: 0 100px; 
+    background-color: #c9c7ef;
+    background-repeat: no-repeat; 
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+.videoBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+    padding-top: 1rem;
+}
+
+.camera {
+    padding-top: 2rem;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    padding-bottom: 5rem;
+    width: 25%;
+}
+
+.scanButton {
+    display: flex;
+    flex-direction: row;
+    max-width: 50%;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    padding-top: 5rem;
+    color: white;
+    background-color: white;
+}
+
+.TITLE {
+    font-family: "Baskervville SC" !important;
+    font-weight: 400;
+    padding-top: 2.2em;
+    font-size: 5em !important;
+    color: #433f83;
+    font-display: swap;
+    text-align: center;
+}
+.nameEmail {
+    text-decoration: none;
+    color: #433f83;
+    text-align: center;
+
+}
+
+.name, .email, .checkin {
+    font-family: 'Lora' !important;
+    font-size: 20px !important;
+}
+
+.checkInBox {
+    font-family: "Lora" !important;
+    color: #433f83;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+      filter: blur(15px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+@media screen and (max-width: 430px) {
+    .TITLE {
+        font-family: "Baskervville SC" !important;
+        font-weight: 400;
+        padding-top: 5em;
+        font-size: 2.5em !important;
+        color: #433f83;
+        font-display: swap;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    .videoBox{
+        font-family: 'Lora' !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 5rem;
+        padding-top: 1rem;
+        size: 10em;
+    }
+    .camera{
+        width: 75%;
+    }
+  }

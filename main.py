@@ -21,7 +21,7 @@ def send_email(user_email, user_name, qr_image_path):
     msg['To'] = user_email
     msg['Subject'] = "Your Event Ticket"
 
-    body = f"Hello {user_name},\n\nPlease find your event ticket attached. This is a automated test email. If it worked, then I'm super cool and you should be happy about that.\n\nBest regards, my Python script uwu!"
+    body = f"Hello {user_name},\n\nPlease find your event ticket attached. This is a automated test email. If it worked, then I'm super cool and you should be happy about that. If you're confused what this is about, then it might be a good idea to check the junior caucus IT server =) \n\nBest regards, my Python script uwu!"
     msg.attach(MIMEText(body, 'plain'))
 
     with open(qr_image_path, "rb") as f:
