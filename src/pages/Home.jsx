@@ -1,4 +1,5 @@
 import Navbar from "../comps/Navbar";
+import Contact from "../comps/Contact";
 import "./Home.css";
 import Carousel from "../comps/Carousel";
 import { Box, Typography, Button, Collapse } from "@mui/material";
@@ -58,6 +59,9 @@ export default function Home() {
           ))}
         </Box>
       </Box>
+      <Box className="footer">
+            <Contact />
+          </Box>
     </Box>
   );
 }

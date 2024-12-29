@@ -47,7 +47,7 @@ const Navbar = (props) => {
             <Link
               href="/ticket"
               className="nav-menu-item"
-              style={{ fontSize: "1.75rem" }}
+              style={{ fontSize: "2rem" }}
             >
               Ticket Scan
             </Link>

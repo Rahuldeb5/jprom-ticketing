@@ -196,7 +196,6 @@ a:link {
 @media screen and (max-width: 430px) {
   .junior-logo {
     max-width: 9rem;
-    margin-left: 1em;
   }
   .menu-button {
     margin-left: 6.5em;
@@ -224,5 +223,11 @@ a:link {
   }
   .nav-dropdown:hover {
     transform: scale(1) !important;
+  }
+
+  .nav-menu-item{
+    padding-left: 20px;
+    font-size: 1.5rem !important;
+    padding-right: 10px;
   }
 }
