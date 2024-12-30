@@ -50,7 +50,6 @@ export default function Ticket() {
   
     const scanningElement = async () => {
       const text = await readQRCode(videoRef.current);
-      console.log(text);
       if(text) {
         setKey(text);
       } else {
@@ -76,8 +75,6 @@ export default function Ticket() {
       const newChecked = !checked;
       setChecked(newChecked);
       updateTable(newChecked);
-      console.log(user.id);
-      console.log(newChecked);
     }
   
     useEffect(() => {
