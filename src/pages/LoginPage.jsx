@@ -10,6 +10,7 @@ import "./LoginPage.css"
 const LoginPage = () => {
     const [loading, setLoading] = useState(false);
     const [userEmail, setUserEmail] = useState(null);
+    const [isAuthorized, setIsAuthorized] = useState(false);
 
     const navigate = useNavigate();
 
@@ -40,8 +41,26 @@ const LoginPage = () => {
         if(session && session.user) {
             const email = session.user.email;
             setUserEmail(email);
-            console.log(userEmail);
-            navigate("/ticket");
+            
+            const { data: emails, error: emailError } = await supabase
+                .from("admin")
+                .select("email");
+            
+            if(emailError) {
+                console.error("Error fetching authorized emails:", emailError.message);
+                return;
+            }
+
+            const authorizedEmails = emails.map(item => item.email);
+
+            if(authorizedEmails.includes(email)) {
+                setIsAuthorized(true);
+                navigate("/ticket");
+            } else {
+                console.log("Unauthorized email:", email);
+                setIsAuthorized(false);    
+            }
+            
         } else {
             console.log("No active session or user is undefined.");
         }
@@ -53,7 +72,7 @@ const LoginPage = () => {
 
     return(
         <Box>
-            {userEmail ? (
+            {(userEmail && isAuthorized) ? (
                 <Box>
                     <Ticket />
                 </Box>
