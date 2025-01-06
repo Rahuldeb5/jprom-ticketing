@@ -29,7 +29,7 @@ export default function Home() {
       <Box className="banner">
         <Typography className="banner-title">‼️TICKETS‼️</Typography>
         <Typography className="banner-text">Tickets are now available to buy! Click below to be redirected.</Typography>
-        <Button className="banner-button" variant="contained" color="primary" size="large" style={{backgroundColor: '#444484  ',color: '#ffffff'}}  onClick={() => window.open('https://www.pclassic.org/', '_blank')}>
+        <Button className="banner-button" variant="contained" color="primary" size="large" style={{backgroundColor: '#444484  ',color: '#ffffff'}}  onClick={() => window.open('https://junior.stuysu.org/', '_blank')}>
           REDIRECT
         </Button>
       </Box>
