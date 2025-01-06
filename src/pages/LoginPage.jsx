@@ -18,10 +18,13 @@ const LoginPage = () => {
         setLoading(true);
         setUserEmail(null);
         setIsAuthorized(false);
+
+        const redirectToUrl = process.env.REACT_APP_SUPABASE_REDIRECT_URL || `${window.location.origin}/ticket`;
+
         const { error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: `${window.location.origin}/ticket`,
+                redirectTo: redirectToUrl,
             },
 
         });
