@@ -33,7 +33,7 @@ const LoginPage = () => {
         const { error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: getURL(),
+                redirectTo: `${getURL()}ticket`,
             },
 
         });
@@ -43,35 +43,36 @@ const LoginPage = () => {
     };
 
     const checkAccess = async () => {
-        localStorage.clear();
-        sessionStorage.clear();
         const { data, error } = await supabase.auth.getSession();
-
+    
         if (error) {
             console.error("Error fetching session:", error.message);
             return;
         }
-
+    
         const session = data.session;
-
-        if(session && session.user) {
+    
+        if (session && session.user) {
             const email = session.user.email;
             setUserEmail(email);
-            
+    
             const { data: emails, error: emailError } = await supabase
                 .from("admin")
                 .select("email");
-            
-            if(emailError) {
+    
+            if (emailError) {
                 console.error("Error fetching authorized emails:", emailError.message);
                 return;
             }
-
+    
             const authorizedEmails = emails.map(item => item.email);
-
-            if(authorizedEmails.includes(email)) {
+    
+            if (authorizedEmails.includes(email)) {
                 setIsAuthorized(true);
-                navigate("/ticket");
+                // Redirect user if not already on the ticket page
+                if (window.location.pathname !== "/ticket") {
+                    navigate("/ticket");
+                }
             } else {
                 console.log("Unauthorized email:", email);
                 setIsAuthorized(false);
@@ -81,19 +82,16 @@ const LoginPage = () => {
                 } else {
                     console.log("Session ended for unauthorized user.");
                 }
-                
-
+    
                 setUserEmail(null);
                 setIsAuthorized(false);
-                setLoading(false);
             }
-            
         } else {
             console.log("No active session or user is undefined.");
             setUserEmail(null);
             setIsAuthorized(false);
         }
-    };
+    };    
 
     useEffect(() => {
         checkAccess();
