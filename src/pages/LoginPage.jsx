@@ -16,8 +16,8 @@ const LoginPage = () => {
 
     const getURL = () => {
         let url =
-          process?.env?.NEXT_PUBLIC_SITE_URL ??
-          process?.env?.NEXT_PUBLIC_VERCEL_URL ??
+          process.env.NEXT_PUBLIC_SITE_URL ??
+          process.env.NEXT_PUBLIC_VERCEL_URL ??
           'http://localhost:3000/ticket'
 
         url = url.startsWith('http') ? url : `https://${url}`.
@@ -29,8 +29,6 @@ const LoginPage = () => {
         setLoading(true);
         setUserEmail(null);
         setIsAuthorized(false);
-
-        const redirectToUrl = process.env.REACT_APP_SUPABASE_REDIRECT_URL || `${window.location.origin}/ticket`;
 
         const { error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
