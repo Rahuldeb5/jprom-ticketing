@@ -14,6 +14,17 @@ const LoginPage = () => {
 
     const navigate = useNavigate();
 
+    const getURL = () => {
+        let url =
+          process?.env?.NEXT_PUBLIC_SITE_URL ??
+          process?.env?.NEXT_PUBLIC_VERCEL_URL ??
+          'http://localhost:3000/ticket'
+
+        url = url.startsWith('http') ? url : `https://${url}`.
+        url = url.endsWith('/') ? url : `${url}/`
+        return url
+    }      
+
     const handleSignIn = async () => {
         setLoading(true);
         setUserEmail(null);
@@ -24,7 +35,7 @@ const LoginPage = () => {
         const { error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
-                redirectTo: redirectToUrl,
+                redirectTo: getURL(),
             },
 
         });
