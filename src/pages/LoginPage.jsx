@@ -16,6 +16,8 @@ const LoginPage = () => {
 
     const handleSignIn = async () => {
         setLoading(true);
+        setUserEmail(null);
+        setIsAuthorized(false);
         const { error } = await supabase.auth.signInWithOAuth({
             provider: 'google',
             options: {
@@ -29,6 +31,8 @@ const LoginPage = () => {
     };
 
     const checkAccess = async () => {
+        localStorage.clear();
+        sessionStorage.clear();
         const { data, error } = await supabase.auth.getSession();
 
         if (error) {
@@ -58,11 +62,24 @@ const LoginPage = () => {
                 navigate("/ticket");
             } else {
                 console.log("Unauthorized email:", email);
-                setIsAuthorized(false);    
+                setIsAuthorized(false);
+                const { error: signOutError } = await supabase.auth.signOut();
+                if (signOutError) {
+                    console.error("Error signing out:", signOutError.message);
+                } else {
+                    console.log("Session ended for unauthorized user.");
+                }
+                
+
+                setUserEmail(null);
+                setIsAuthorized(false);
+                setLoading(false);
             }
             
         } else {
             console.log("No active session or user is undefined.");
+            setUserEmail(null);
+            setIsAuthorized(false);
         }
     };
 
