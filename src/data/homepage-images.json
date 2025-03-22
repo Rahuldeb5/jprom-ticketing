@@ -1,15 +1,19 @@
 [
     {
-      "caption": "philip's face",
+      "caption": "Cruise Image",
       "image": "/images/Picture1.png"
     },
     {
-      "caption": "young rahul",
+      "caption": "Cruise Image",
       "image": "/images/Picture2.png"
     },
     {
-      "caption": "cool david",
+      "caption": "Cruise Image",
       "image": "/images/Picture3.png"
+    },
+    {
+      "caption": "Cruise Image",
+      "image": "/images/Picture4.png"
     }
   ]
   

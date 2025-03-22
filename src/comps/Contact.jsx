@@ -38,78 +38,11 @@ const Contact = () => {
         </Box>
       </Box>
       <Typography variant="body1" align="center">
-        © 2024 Junior Caucus.
+        © 2025 Junior Caucus.
       </Typography>
       <Typography variant="body1" align="center" class="thanks">
-        Special thanks to our Junior Caucus IT Team:
+        Special thanks to our Junior Caucus IT Team!
       </Typography>
-      <Box className="developer-columns">
-        <Box className="developer-column" align="center">
-          <Typography variant="body1">Kalimul Kaif</Typography>
-          <Typography variant="body1">David Lee</Typography>
-          <Typography variant="body1">Kanchanok Zhang</Typography>
-          <Typography variant="body1">Ruxia Chen</Typography>
-        </Box>
-        <Box className="divider" />
-        <Box className="developer-column" align="center">
-          <Typography variant="body1">Jiewen Huang</Typography>
-          <Typography variant="body1">Ardian Agoes</Typography>
-          <Typography variant="body1">Alvin Sze</Typography>
-          <Typography variant="body1">Rahul Deb</Typography>
-        </Box>
-      </Box>
-      <Typography variant="body1" align="center">
-        Co-Presidents:
-        <Link
-          href="mailto:vlei60@stuy.edu"
-          color="inherit"
-          sx={{ textDecoration: "none" }}
-        >
-          {" "}
-          Vanna Lei{" "}
-        </Link>
-        &
-        <Link
-          href="mailto:pzhang60@stuy.edu"
-          color="inherit"
-          sx={{ textDecoration: "none" }}
-        >
-          {" "}
-          Philip Zhang{" "}
-        </Link>
-      </Typography>
-      <Typography variant="body1" align="center">
-        Chief of Staff:
-        <Link
-          href="mailto:azhou60@stuy.edu"
-          color="inherit"
-          sx={{ textDecoration: "none" }}
-        >
-          {" "}
-          Amy Zhou{" "}
-        </Link>
-        &
-        <Link
-          href="mailto:kchen60@stuy.edu"
-          color="inherit"
-          sx={{ textDecoration: "none" }}
-        >
-          {" "}
-          Kelly Chen{" "}
-        </Link>
-      </Typography>
-      <Typography variant="body1" align="center">
-        Development Lead:
-        <Link
-          href="mailto:rdeb60@stuy.edu"
-          color="inherit"
-          sx={{ textDecoration: "none" }}
-        >
-          {" "}
-          Rahul Deb{" "}
-        </Link>
-      </Typography>
-      <br />
     </Box>
   );
 };

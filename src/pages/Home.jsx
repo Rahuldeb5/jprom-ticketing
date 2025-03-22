@@ -1,25 +1,22 @@
-import Navbar from "../comps/Navbar";
-import Contact from "../comps/Contact";
-import "./Home.css";
-import Carousel from "../comps/Carousel";
-import { Box, Typography, Button, Collapse } from "@mui/material";
+import { Box, Button, Collapse, Typography } from "@mui/material";
 import React, { useState } from "react";
+import Carousel from "../comps/Carousel";
+import Contact from "../comps/Contact";
+import Navbar from "../comps/Navbar";
+import "./Home.css";
 
 export default function Home() {
   const [expandedQuestion, setExpandedQuestion] = useState(null);
   const [rotateArrow, setRotateArrow] = useState(false);
   const questionsAndAnswers = [
-    {question: "Lorem ipsum dolor sit amet?", answer: "Lorem ipsum dolor sit amet."},
-    {question: "Lorem ipsum dolor sit amet?", answer: "Lorem ipsum dolor sit amet"},
-    {question: "Lorem ipsum dolor sit amet?", answer: "Lorem ipsum dolor sit amet."},
+    {question: "Do we get to know what food will be served?", answer: "Yes! This is the <a href='https://docs.google.com/document/d/1vMu8kWkczAraT2c1ubOncTpgNGMfGxvDaU9WEGfsGLc/edit?tab=t.0' target='_blank' rel='noopener noreferrer'>menu</a>!"},
+    {question: "Can we bring non-stuy kids?", answer: "Yes!"},
+    {question: "How much will tickets cost?", answer: "TBD but approximately $100 (hopefully a little bit under)."},
   ];
   const expandOnClick = (questionIndex) => {
     setExpandedQuestion(expandedQuestion === questionIndex ? null : questionIndex);
     setRotateArrow(!rotateArrow);
   };
-  
-
-
   return (
     <Box>
     <Box className="navbar">
@@ -35,9 +32,10 @@ export default function Home() {
       </Box>
       <Box className="info-page">
       <Typography className="info-title">JPROM</Typography>
-      <Typography className="info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Typography>
+      <Typography className="info-text">Junior Prom will be held on June 4th, 2025! Join us on the Spirit of New York at
+         7:00 PM for an unforgettable evening of masks, food, and dancing! Attendees will board the boat at 5:30 PM. 
+      </Typography>
         <Typography>&nbsp;</Typography>
-        <Typography className='info-text' >EMAIL: jhuang60@stuy.edu</Typography>
         <Box className="slideshow">
           <Carousel className="slideshow-carousel" />
         </Box>
@@ -53,7 +51,7 @@ export default function Home() {
                 {item.question}
               </Typography>
               <Collapse in={expandedQuestion === index}>
-                <Typography className="QNA-answer">{item.answer}</Typography>
+                <Typography className="QNA-answer" dangerouslySetInnerHTML={{ __html: item.answer }} />
               </Collapse>
             </Box>
           ))}
