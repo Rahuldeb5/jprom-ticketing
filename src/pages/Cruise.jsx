@@ -94,61 +94,70 @@ export default function Cruise() {
         image: "/images/colgate-clock.png"
       }
     ];
-        useEffect(() => {
-        const handleScroll = () => {
-            setVisibleIndexes((prevIndexes) => {
-                const updatedIndexes = new Set(prevIndexes);
-            
-                contentRefs.current.forEach((box, index) => {
-                if (box) {
-                    const rect = box.getBoundingClientRect();
-                    if (rect.top < window.innerHeight * 0.9) {
-                    updatedIndexes.add(index);
-                    }
-                }
-                });
-            
-                return Array.from(updatedIndexes);
+    useEffect(() => {
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -20% 0px", 
+        threshold: 0.2, 
+      };
+    
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute("data-index"));
+            setVisibleIndexes((prev) => {
+              if (!prev.includes(index)) {
+                return [...prev, index];
+              }
+              return prev;
             });
-            };
-      
-          window.addEventListener("scroll", handleScroll);
-          handleScroll(); 
-          return () => window.removeEventListener("scroll", handleScroll);
-        }, []);
-      
-        return (
-          <Box>
-            <Box className="navbar">
-              <Navbar />
-            </Box>  
-            <Box className="cruise-page">
-              <Typography className="route-title">CRUISE ROUTE</Typography>
-              <Box className="route-image-container">
-                <img src="/images/route.png" alt="Route" className="route-image" />
-                <img src="/images/route-info.png" alt="Route Info" className="route-info-image" />
-              </Box>
-              {textContent.map((item, index) => (
-                <Box
-                  key={index}
-                  ref={(el) => (contentRefs.current[index] = el)}
-                  className={`text-box ${visibleIndexes.includes(index) ? "visible" : "hidden"} ${index % 2 === 0 ? "left" : "right"}`}
-                  style={{ transitionDelay: `${index * 0.15}s` }}
-                >
-                  {}
-                  {index % 2 === 0 && (
-                    <img src={item.image} alt={item.title} className="text-box-image" />
-                  )}
-                  <div className="text-box-content">
-                    <Typography className="text-box-title">{item.title}</Typography>
-                    <Typography className="text-box-body">{item.body}</Typography>
-                  </div>
-                  {index % 2 !== 0 && (
-                    <img src={item.image} alt={item.title} className="text-box-image" />
-                  )}
-                </Box>
-              ))}
-            </Box>
+            observer.unobserve(entry.target); 
+          }
+        });
+      }, observerOptions);
+    
+      contentRefs.current.forEach((box, index) => {
+        if (box) {
+          box.setAttribute("data-index", index);
+          observer.observe(box);
+        }
+      });
+    
+      return () => {
+        observer.disconnect();
+      };
+    }, []);
+    
+    return (
+      <Box>
+        <Box className="navbar">
+          <Navbar />
+        </Box>
+        <Box className="cruise-page">
+          <Typography className="route-title">CRUISE ROUTE</Typography>
+          <Box className="route-image-container">
+            <img src="/images/route.png" alt="Route" className="route-image" />
+            <img src="/images/route-info.png" alt="Route Info" className="route-info-image" />
           </Box>
-        );
-      }
+          {textContent.map((item, index) => (
+            <Box
+              key={index}
+              ref={(el) => (contentRefs.current[index] = el)}
+              className={`text-box ${visibleIndexes.includes(index) ? "visible" : "hidden"} ${index % 2 === 0 ? "left" : "right"}`}
+            >
+              {index % 2 === 0 && (
+                <img src={item.image} alt={item.title} className="text-box-image" loading="lazy" />
+              )}
+              <div className="text-box-content">
+                <Typography className="text-box-title">{item.title}</Typography>
+                <Typography className="text-box-body">{item.body}</Typography>
+              </div>
+              {index % 2 !== 0 && (
+                <img src={item.image} alt={item.title} className="text-box-image" loading="lazy" />
+              )}
+            </Box>
+          ))}
+        </Box>
+      </Box>
+    );
+  }
