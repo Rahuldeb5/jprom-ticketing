@@ -15,7 +15,9 @@ export default function Home() {
         Yes! This is the <a href="https://docs.google.com/document/d/1vMu8kWkczAraT2c1ubOncTpgNGMfGxvDaU9WEGfsGLc/edit?tab=t.0" target="_blank" rel="noopener" className="faq-link">menu</a>
       </React.Fragment>
     )},
-    {question: "Can we bring non stuy kids?", answer: "Yes!"}
+    {question: "Can we bring non stuy kids?", answer: "No."},
+    {question: "Can we bring stuy students from different grades?", answer: "Yes."},
+    {question: "Can we buy more than one ticket?", answer: "Yes! you can buy an additonal ticket for a guest"},
   ];
   const expandOnClick = (questionIndex) => {
     setExpandedQuestion(expandedQuestion === questionIndex ? null : questionIndex);
@@ -38,9 +40,7 @@ export default function Home() {
       <Typography className="info-title">JPROM</Typography>
       <Typography className="info-text">Junior Prom will be on Wednesday, June 4, 2025 on the Spirit of New York 🛳 and the theme is Masquerade Ball 🌟. (no school the next day :)
       </Typography>
-      <Typography className="info-text">The Early Bird  Special 🕊price is $95 until 5/4 or when it reaches capacity at 125 tickets-whatever comes first! 
-Note: The discounted tickets are limited to one per person and only available to Stuyvesant students.
-Afterwards, tickets will be sold at the regular price of $105. Get them now before it's too late!!!
+      <Typography className="info-text">The early bird special is now over. Tickets will now be sold at the regular price of $105.
       </Typography>
         <Typography>&nbsp;</Typography>
         <Box className="slideshow">

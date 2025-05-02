@@ -1,4 +1,8 @@
 [
+  {
+    "caption": "Image 0",
+    "image": "images/boat.jpeg"
+  },
     {
       "caption": "Image 1",
       "image": "/images/img1.png"
