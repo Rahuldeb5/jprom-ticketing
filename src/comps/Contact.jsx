@@ -39,6 +39,7 @@ const Contact = () => {
       </Box>
       <Typography variant="body1" align="center">
         © 2025 Junior Caucus.
+        © 2025 Junior Caucus.
       </Typography>
       <Typography variant="body1" align="center" class="thanks">
         Special thanks to our Junior Prom Development Team:
@@ -105,7 +106,6 @@ const Contact = () => {
           Rahul Deb{" "}
         </Link>
       </Typography>
-      <br />
     </Box>
   );
 };

@@ -1,5 +1,8 @@
-import Navbar from "../comps/Navbar";
+import { Box, Button, Collapse, Typography } from "@mui/material";
+import React, { useState } from "react";
+import Carousel from "../comps/Carousel";
 import Contact from "../comps/Contact";
+import Navbar from "../comps/Navbar";
 import "./Home.css";
 import Carousel from "../comps/Carousel";
 import { Box, Typography, Button, Collapse, Link } from "@mui/material";
@@ -20,9 +23,6 @@ export default function Home() {
     setExpandedQuestion(expandedQuestion === questionIndex ? null : questionIndex);
     setRotateArrow(!rotateArrow);
   };
-  
-
-
   return (
     <Box>
     <Box className="navbar">
@@ -61,7 +61,7 @@ Afterwards, tickets will be sold at the regular price of $105. Get them now befo
                 {item.question}
               </Typography>
               <Collapse in={expandedQuestion === index}>
-                <Typography className="QNA-answer">{item.answer}</Typography>
+                <Typography className="QNA-answer" dangerouslySetInnerHTML={{ __html: item.answer }} />
               </Collapse>
             </Box>
           ))}

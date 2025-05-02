@@ -34,7 +34,7 @@ const Carousel = () => {
             <img src={item.image} alt={`Carousel ${index + 1}`} />
           </Box>
         ))}
-      </ReactCarousel>
+      </ReactCarousel>                                      
     </Box>
   );
 };
