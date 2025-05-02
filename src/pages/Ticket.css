@@ -29,8 +29,9 @@
     justify-content: center;
     margin: auto;
     align-items: center;
-    padding-bottom: 5rem;
+    padding-bottom: 0rem;
     width: 25%;
+    height: 25%;
 }
 
 .scanButton {

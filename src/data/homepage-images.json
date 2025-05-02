@@ -1,19 +1,19 @@
 [
     {
-      "caption": "Cruise Image",
-      "image": "/images/Picture1.png"
+      "caption": "Image 1",
+      "image": "/images/img1.png"
     },
     {
-      "caption": "Cruise Image",
-      "image": "/images/Picture2.png"
+      "caption": "Image 2",
+      "image": "/images/img2.png"
     },
     {
-      "caption": "Cruise Image",
-      "image": "/images/Picture3.png"
+      "caption": "Image 3",
+      "image": "/images/img3.png"
     },
     {
-      "caption": "Cruise Image",
-      "image": "/images/Picture4.png"
+      "caption": "Image 4",
+      "image": "/images/img4.png"
     }
   ]
   
