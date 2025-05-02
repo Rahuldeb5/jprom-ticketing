@@ -1,7 +1,11 @@
 import { Box, Button, Collapse, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Carousel from "../comps/Carousel";
+import { Box, Button, Collapse, Typography } from "@mui/material";
+import React, { useState } from "react";
+import Carousel from "../comps/Carousel";
 import Contact from "../comps/Contact";
+import Navbar from "../comps/Navbar";
 import Navbar from "../comps/Navbar";
 import "./Home.css";
 
