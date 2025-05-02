@@ -5,6 +5,7 @@ import { supabase } from './supabaseClient';
 import { useEffect, useRef, useState } from 'react';
 import { BrowserQRCodeReader } from '@zxing/browser';
 import Navbar from '../comps/Navbar';
+import Contact from "../comps/Contact";
 
 export default function Ticket() {
     const [key, setKey] = useState(null);
@@ -130,11 +131,7 @@ export default function Ticket() {
           <Button className = "scanButton" variant="contained" style={{backgroundColor: '#0e4187  ',color: '#ffffff'}} onClick={handleClick}>Scan QR Code </Button>
           <video className="camera" ref={videoRef}/>
         </Box>
-        
-        {/* 
-          TO-DO: IMPLEMENT QR CODE SCANNER AND CHECK IN
-        */}
-  
+
       </Box>
     );
   };

@@ -38,23 +38,19 @@ const Contact = () => {
         </Box>
       </Box>
       <Typography variant="body1" align="center">
-        © 2024 Junior Caucus.
+        © 2025 Junior Caucus.
       </Typography>
       <Typography variant="body1" align="center" class="thanks">
-        Special thanks to our Junior Caucus IT Team:
+        Special thanks to our Junior Prom Development Team:
       </Typography>
       <Box className="developer-columns">
         <Box className="developer-column" align="center">
-          <Typography variant="body1">Kalimul Kaif</Typography>
-          <Typography variant="body1">David Lee</Typography>
-          <Typography variant="body1">Kanchanok Zhang</Typography>
-          <Typography variant="body1">Ruxia Chen</Typography>
+        <Typography variant="body1">Jiewen Huang</Typography>
+        <Typography variant="body1">Ardian Agoes</Typography>
         </Box>
         <Box className="divider" />
         <Box className="developer-column" align="center">
-          <Typography variant="body1">Jiewen Huang</Typography>
-          <Typography variant="body1">Ardian Agoes</Typography>
-          <Typography variant="body1">Alvin Sze</Typography>
+          <Typography variant="body1">Kanchanok Zhang</Typography>
           <Typography variant="body1">Rahul Deb</Typography>
         </Box>
       </Box>
