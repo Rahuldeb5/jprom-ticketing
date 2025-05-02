@@ -4,9 +4,6 @@ import Carousel from "../comps/Carousel";
 import Contact from "../comps/Contact";
 import Navbar from "../comps/Navbar";
 import "./Home.css";
-import Carousel from "../comps/Carousel";
-import { Box, Typography, Button, Collapse, Link } from "@mui/material";
-import React, { useState } from "react";
 
 export default function Home() {
   const [expandedQuestion, setExpandedQuestion] = useState(null);
@@ -14,7 +11,7 @@ export default function Home() {
   const questionsAndAnswers = [
     {question: "Do we get to know what food will be served?", answer: (
       <React.Fragment>
-        Yes! This is the <Link href="https://docs.google.com/document/d/1vMu8kWkczAraT2c1ubOncTpgNGMfGxvDaU9WEGfsGLc/edit?tab=t.0" target="_blank" rel="noopener" className="faq-link">menu</Link>.
+        Yes! This is the <a href="https://docs.google.com/document/d/1vMu8kWkczAraT2c1ubOncTpgNGMfGxvDaU9WEGfsGLc/edit?tab=t.0" target="_blank" rel="noopener" className="faq-link">menu</a>
       </React.Fragment>
     )},
     {question: "Can we bring non stuy kids?", answer: "Yes!"}
@@ -45,7 +42,6 @@ Note: The discounted tickets are limited to one per person and only available to
 Afterwards, tickets will be sold at the regular price of $105. Get them now before it's too late!!!
       </Typography>
         <Typography>&nbsp;</Typography>
-        <Link className='link-text' href="https://docs.google.com/document/d/1EM-nl0JzDp3wK_h-PP-D48TUCXTCx3Qd6nrvAc4tUgY/edit?tab=t.0">Cruise Route</Link>
         <Box className="slideshow">
           <Carousel className="slideshow-carousel" />
         </Box>
@@ -61,7 +57,9 @@ Afterwards, tickets will be sold at the regular price of $105. Get them now befo
                 {item.question}
               </Typography>
               <Collapse in={expandedQuestion === index}>
-                <Typography className="QNA-answer" dangerouslySetInnerHTML={{ __html: item.answer }} />
+                <Typography className="QNA-answer">
+                  {item.answer}
+                </Typography>
               </Collapse>
             </Box>
           ))}
