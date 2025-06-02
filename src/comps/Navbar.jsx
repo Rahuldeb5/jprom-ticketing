@@ -44,34 +44,11 @@ const Navbar = (props) => {
         </Box>
           <Box className="menu">
           <Link
-              href="/"
-              className="nav-menu-item"
-              style={{ fontSize: "2rem" }}
-            >
-              JProm Home
-            </Link>
-            <Link
-              href="/cruise"
-              className="nav-menu-item"
-              style={{ fontSize: "2rem" }}
-            >
-              Cruise Route
-            </Link>
-          <Link
               href="/ticket"
               className="nav-menu-item"
               style={{ fontSize: "2rem" }}
             >
               Ticket Scan
-            </Link>
-            <Link
-                href="https://junior.stuysu.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nav-menu-item"
-                style={{ fontSize: "2rem" }}
-                >
-                Junior Caucus Site
             </Link>
           </Box>
       </Box>
